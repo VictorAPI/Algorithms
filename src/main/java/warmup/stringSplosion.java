@@ -1,6 +1,10 @@
 package warmup;
 
+//Given a non-empty string like "Code" return a string like "CCoCodCode".
+
 import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class stringSplosion {
 
@@ -11,6 +15,14 @@ public class stringSplosion {
         return result;
     }
 
-}
+    @Test
+    public void test() {
+        String initStr = "Code";
+        String finStr = "CCoCodCode";
+        assertTrue(stringSplosion(initStr).equals(finStr),
+                "Expected: " + finStr + ", Actual: " + stringSplosion(initStr));
+        System.out.println("Success! Final string: " + stringSplosion(initStr));
+    }
 
-//Given a non-empty string like "Code" return a string like "CCoCodCode".
+
+}

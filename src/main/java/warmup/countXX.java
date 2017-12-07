@@ -1,5 +1,7 @@
 package warmup;
 
+//Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx" contains 2 "xx".
+
 import org.junit.Test;
 
 public class countXX {
@@ -10,6 +12,16 @@ public class countXX {
             if (str.substring(i, i + 2).equals("xx")) count++;
         return count;
     }
-}
 
-//Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx" contains 2 "xx".
+    @Test
+    public void test() {
+        String str = "Hellox, xx you";
+        System.out.println(countXX(str));
+    }
+
+    @Test
+    public void test2() {
+        String str = "Helloxxx, x you";
+        System.out.println(countXX(str));
+    }
+}

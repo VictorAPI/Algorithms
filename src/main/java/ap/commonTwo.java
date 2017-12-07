@@ -19,8 +19,10 @@ public class commonTwo {
     }
 
     @Test
-    public void ________() {
-
+    public void testCommon() {
+        String[] firstArray = new String[] {"asba", "werwerw", "asd", "asdasdd", "HelloVleH"};
+        String[] secondArray = new String[] {"asba", "asd", "HelloVleH"};
+        System.out.println(commonTwo(firstArray, secondArray));
     }
 }
 
