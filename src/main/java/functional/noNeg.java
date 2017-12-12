@@ -1,8 +1,14 @@
 package functional;
 
+//Given a list of integers, return a list of the integers, omitting any that are less than 0.
+
 import org.junit.Test;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class noNeg {
 
@@ -11,10 +17,16 @@ public class noNeg {
                 .filter(n -> n >= 0)
                 .collect(Collectors.toList());
     }
+
+    @Test
+    public void test() {
+        List<Integer> testList = Arrays.asList(1, 2, 3, -5, -6, 0);
+        List<Integer> expectedList = Arrays.asList(1, 2, 3, 0);
+        assertTrue(noNeg(testList).equals(expectedList),
+                "Expected: " + String.valueOf(expectedList) + ", Actual: " + String.valueOf(noNeg(testList)));
+        System.out.println(String.valueOf(noNeg(testList)));
+    }
 }
-
-//Given a list of integers, return a list of the integers, omitting any that are less than 0.
-
 
 //        Java Functional API
 //

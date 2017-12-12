@@ -18,11 +18,31 @@ public class withoutDoubles {
 
     @Test
     public void test() {
-        int a = 39, b = 13;
+        int a = 3, b = 5;
         boolean testBool = true;
-        int expected = 52;
-        assertTrue(withoutDoubles(a, b, testBool) == expected,
-                "Expected: " + String.valueOf(expected) + ", Actual: " + String.valueOf(withoutDoubles(a, b, testBool)));
+        int noDoubles = 8;
+        assertTrue(withoutDoubles(a, b, testBool) == noDoubles,
+                "Expected: " + String.valueOf(noDoubles) + ", Actual: " + String.valueOf(withoutDoubles(a, b, testBool)));
+        System.out.println(String.valueOf(withoutDoubles(a, b, testBool)));
+    }
+
+    @Test
+    public void test1() {
+        int a = 3, b = 3;
+        boolean testBool = true;
+        int noDoubles = 7;
+        assertTrue(withoutDoubles(a, b, testBool) == noDoubles,
+                "Expected: " + String.valueOf(noDoubles) + ", Actual: " + String.valueOf(withoutDoubles(a, b, testBool)));
+        System.out.println(String.valueOf(withoutDoubles(a, b, testBool)));
+    }
+
+    @Test
+    public void test2() {
+        int a = 6, b = 5;
+        boolean testBool = true;
+        int noDoubles = 11;
+        assertTrue(withoutDoubles(a, b, testBool) == noDoubles,
+                "Expected: " + String.valueOf(noDoubles) + ", Actual: " + String.valueOf(withoutDoubles(a, b, testBool)));
         System.out.println(String.valueOf(withoutDoubles(a, b, testBool)));
     }
 }

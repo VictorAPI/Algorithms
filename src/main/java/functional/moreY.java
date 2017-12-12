@@ -1,8 +1,14 @@
 package functional;
 
+//Given a list of strings, return a list where each string has "y" added at its start and end.
+
 import org.junit.Test;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class moreY {
 
@@ -12,10 +18,15 @@ public class moreY {
                 .collect(Collectors.toList());
     }
 
+    @Test
+    public void test() {
+        List<String> testList = Arrays.asList("sasd", "asdaff");
+        List<String> expectedList = Arrays.asList("ysasdy", "yasdaffy");
+        assertTrue(moreY(testList).equals(expectedList),
+                "Expected: " + String.valueOf(expectedList) + ", Actual: " + String.valueOf(moreY(testList)));
+        System.out.println(String.valueOf(moreY(testList)));
+    }
 }
-
-//Given a list of strings, return a list where each string has "y" added at its start and end.
-
 
 //        Java Functional API
 //

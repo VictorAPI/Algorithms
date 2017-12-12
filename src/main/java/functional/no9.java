@@ -1,21 +1,33 @@
 package functional;
 
+//Given a list of non-negative integers, return a list of those numbers except omitting any that end with 9.
+//Note that the boolean logic of filter() is the opposite of removeIf().
+
 import org.junit.Test;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class no9 {
 
     public List<Integer> no9(List<Integer> nums) {
         return nums.stream()
-                .filter(n -> n%10 != 9)
+                .filter(n -> n % 10 != 9)
                 .collect(Collectors.toList());
     }
+
+    @Test
+    public void test() {
+        List<Integer> testList = Arrays.asList(1, 2, 19);
+        List<Integer> expectedList = Arrays.asList(1, 2);
+        assertTrue(no9(testList).equals(expectedList),
+                "Expected: " + String.valueOf(expectedList) + ", Actual: " + String.valueOf(no9(testList)));
+        System.out.println(String.valueOf(no9(testList)));
+    }
 }
-
-//Given a list of non-negative integers, return a list of those numbers except omitting any that end with 9.
-//Note that the boolean logic of filter() is the opposite of removeIf().
-
 
 //        Java Functional API
 //

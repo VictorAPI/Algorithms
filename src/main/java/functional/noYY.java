@@ -1,22 +1,34 @@
 package functional;
 
+//Given a list of strings, return a list where each string has "y" added at its end,
+//omitting any resulting strings that contain "yy" as a substring anywhere.
+
 import org.junit.Test;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class noYY {
 
     public List<String> noYY(List<String> strings) {
         return strings.stream()
-                .map(string -> string + "y" )
+                .map(string -> string + "y")
                 .filter(n -> !n.contains("yy"))
                 .collect(Collectors.toList());
     }
 
+    @Test
+    public void test() {
+        List<String> testList = Arrays.asList("sdfx", "axdayydaf", "asdxxxxxa");
+        List<String> expectedList = Arrays.asList("sdfxy", "asdxxxxxay");
+        assertTrue(noYY(testList).equals(expectedList),
+                "Expected: " + String.valueOf(expectedList) + ", Actual: " + String.valueOf(noYY(testList)));
+        System.out.println(String.valueOf(noYY(testList)));
+    }
 }
-
-//Given a list of strings, return a list where each string has "y" added at its end,
-//omitting any resulting strings that contain "yy" as a substring anywhere.
 
 
 //        Java Functional API

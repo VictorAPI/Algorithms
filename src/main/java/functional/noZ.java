@@ -1,7 +1,17 @@
 package functional;
 
+//Given a list of strings, return a list of the strings, omitting any string that contains a "z".
+//Note: the str.contains(x) method returns a boolean
+
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static com.sun.jmx.snmp.ThreadContext.contains;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class noZ {
 
@@ -9,11 +19,16 @@ public class noZ {
         strings.removeIf(str -> str.contains("z"));
         return strings;
     }
+
+    @Test
+    public void test() {
+        List<String> testList = Arrays.asList("sdfx", "axdayydaf", "asdzxxxxxa");
+        List<String> expectedList = Arrays.asList("sdfx", "axdayydaf");
+        assertTrue(noZ(testList).equals(expectedList),
+                "Expected: " + String.valueOf(expectedList) + ", Actual: " + String.valueOf(noZ(testList)));
+        System.out.println(String.valueOf(noZ(testList)));
+    }
 }
-
-//Given a list of strings, return a list of the strings, omitting any string that contains a "z".
-//Note: the str.contains(x) method returns a boolean
-
 
 //        Java Functional API
 //

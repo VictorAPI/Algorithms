@@ -1,8 +1,14 @@
 package functional;
 
+//Given a list of strings, return a list where each string is converted to lower case (Note: String toLowerCase() method)
+
 import org.junit.Test;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class lower {
 
@@ -11,9 +17,16 @@ public class lower {
                 .map(n -> n.toLowerCase())
                 .collect(Collectors.toList());
     }
-}
 
-//Given a list of strings, return a list where each string is converted to lower case (Note: String toLowerCase() method)
+    @Test
+    public void test() {
+        List<String> testList = Arrays.asList("SASD", "ASDAFF");
+        List<String> expectedList = Arrays.asList("sasd", "asdaff");
+        assertTrue(lower(testList).equals(expectedList),
+                "Expected: " + String.valueOf(expectedList) + ", Actual: " + String.valueOf(lower(testList)));
+        System.out.println(String.valueOf(lower(testList)));
+    }
+}
 
 
 //        Java Functional API

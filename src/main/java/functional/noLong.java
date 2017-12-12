@@ -1,8 +1,14 @@
 package functional;
 
+//Given a list of strings, return a list of the strings, omitting any string length 4 or more.
+
 import org.junit.Test;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class noLong {
 
@@ -11,10 +17,16 @@ public class noLong {
                 .filter(n -> n.length() < 4)
                 .collect(Collectors.toList());
     }
+
+    @Test
+    public void test() {
+        List<String> testList = Arrays.asList("asd", "dfgr", "34", "5");
+        List<String> expectedList = Arrays.asList("asd", "34", "5");
+        assertTrue(noLong(testList).equals(expectedList),
+                "Expected: " + String.valueOf(expectedList) + ", Actual: " + String.valueOf(noLong(testList)));
+        System.out.println(String.valueOf(noLong(testList)));
+    }
 }
-
-//Given a list of strings, return a list of the strings, omitting any string length 4 or more.
-
 
 //        Java Functional API
 //

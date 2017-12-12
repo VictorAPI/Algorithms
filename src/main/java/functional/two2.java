@@ -1,19 +1,31 @@
 package functional;
 
-import org.junit.Test;
-import java.util.List;
-
-public class two2 {
-    public List<Integer> two2(List<Integer> nums) {
-        nums.replaceAll(n -> n*2);
-        nums.removeIf(n -> n%10 == 2);
-        return nums;
-    }
-}
-
 //Given a list of non-negative integers, return a list of those numbers multiplied by 2,
 //omitting any of the resulting numbers that end in 2.
 
+import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class two2 {
+    public List<Integer> two2(List<Integer> nums) {
+        nums.replaceAll(n -> n * 2);
+        nums.removeIf(n -> n % 10 == 2);
+        return nums;
+    }
+
+    @Test
+    public void test() {
+        List<Integer> testList = Arrays.asList(2, 3, 7);
+        List<Integer> expectedList = Arrays.asList(4, 6, 14);
+        assertTrue(String.valueOf(two2(testList)).equals(String.valueOf(expectedList)),
+                "Expected: " + String.valueOf(expectedList) + ", Actual: " + String.valueOf(two2(testList)));
+        System.out.println(String.valueOf(two2(testList)));
+    }
+}
 
 //        Java Functional API
 //

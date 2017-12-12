@@ -1,8 +1,14 @@
 package functional;
 
+//Given a list of strings, return a list where each string has all its "x" removed.
+
 import org.junit.Test;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class noX {
 
@@ -12,19 +18,24 @@ public class noX {
                 .collect(Collectors.toList());
     }
 
-    public String removeX (String str) {
+    public String removeX(String str) {
         String result = "";
-
-        if(str.length() == 0) return result;
-
-        for (int i=0; i<str.length(); i++)
-            if(str.charAt(i) == 'x') result += "";
+        if (str.length() == 0) return result;
+        for (int i = 0; i < str.length(); i++)
+            if (str.charAt(i) == 'x') result += "";
             else result += str.charAt(i);
         return result;
     }
-}
 
-//Given a list of strings, return a list where each string has all its "x" removed.
+    @Test
+    public void test() {
+        List<String> testList = Arrays.asList("sdfx", "axdadaf", "asdxxxxxa");
+        List<String> expectedList = Arrays.asList("sdf", "adadaf", "asda");
+        assertTrue(noX(testList).equals(expectedList),
+                "Expected: " + String.valueOf(expectedList) + ", Actual: " + String.valueOf(noX(testList)));
+        System.out.println(String.valueOf(noX(testList)));
+    }
+}
 
 
 //        Java Functional API
