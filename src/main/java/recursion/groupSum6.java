@@ -1,6 +1,11 @@
-package recursion2;
+package recursion;
 
 import org.junit.Test;
+
+//Given an array of ints, is it possible to choose a group of some of the ints, beginning at the start index,
+//such that the group sums to the given target? However, with the additional constraint that all 6's must be chosen.
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class groupSum6 {
 
@@ -26,9 +31,14 @@ public class groupSum6 {
         return false;
     }
 
-
+    @Test
+    public void test() {
+        int start = 2;
+        int[] nums = {1, 2, 3, 6, 1, 5, 1};
+        int target = 12;
+        boolean expected = true;
+        assertTrue(groupSum6(start, nums, target) == expected,
+                "Expected: " + String.valueOf(expected) + ", Actual: " + String.valueOf(groupSum6(start, nums, target)));
+        System.out.println(String.valueOf(groupSum6(start, nums, target)));
+    }
 }
-
-//Given an array of ints, is it possible to choose a group of some of the ints, beginning at the start index,
-//such that the group sums to the given target? However, with the additional constraint that all 6's must be chosen.
-

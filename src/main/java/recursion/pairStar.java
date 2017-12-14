@@ -1,6 +1,11 @@
 package recursion;
 
+//Given a string, compute recursively a new string where identical chars that are adjacent in the original string
+//are separated from each other by a "*".
+
 import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class pairStar {
 
@@ -11,7 +16,12 @@ public class pairStar {
         else return str.charAt(0) + pairStar(str.substring(1));
     }
 
+    @Test
+    public void test() {
+        String start = "x(((x))x)";
+        String expected = "x(*(*(x)*)x)";
+        assertTrue(pairStar(start).equals(expected),
+                "Expected: " + expected + ", Actual: " + pairStar(start));
+        System.out.println(pairStar(start));
+    }
 }
-
-//Given a string, compute recursively a new string where identical chars that are adjacent in the original string
-// are separated from each other by a "*".
