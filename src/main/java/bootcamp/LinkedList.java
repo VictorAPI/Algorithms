@@ -1,14 +1,13 @@
 package bootcamp;
 
-/**
- * Created by borisgurtovyy on 11/13/17.
- */
-
 class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
-  }
+    int val;
+    ListNode next;
+
+    ListNode(int x) {
+        val = x;
+    }
+}
 
 public class LinkedList {
 
@@ -19,18 +18,17 @@ public class LinkedList {
     }
 
 
-
     // LEETCODE 141
     public boolean hasCycle(ListNode head) {
-        if(head == null){
+        if (head == null) {
             return false;
         }
         ListNode hare = head;
         ListNode turtoise = head;
-        while(hare!= null && hare.next != null){
+        while (hare != null && hare.next != null) {
             hare = hare.next.next;
             turtoise = turtoise.next;
-            if(hare == turtoise){
+            if (hare == turtoise) {
                 return true;
             }
         }
@@ -40,13 +38,13 @@ public class LinkedList {
 
     // LEETCODE 328
     public ListNode oddEvenList(ListNode head) {
-        if(head == null){
+        if (head == null) {
             return null;
         }
         ListNode odd = head;
         ListNode even = head.next;
         ListNode evenHead = even;
-        while(even != null && even.next != null) {
+        while (even != null && even.next != null) {
             odd.next = even.next;
             odd = odd.next;
             even.next = odd.next;

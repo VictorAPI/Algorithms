@@ -1,17 +1,14 @@
 package bootcamp;
 
-/**
- * Created by borisgurtovyy on 11/12/17.
- */
 public class Robot {
 
     public boolean judgeCircle(String moves) {
 
         int x = 0;
         int y = 0;
-        for(int i = 0; i< moves.length();i++){
+        for (int i = 0; i < moves.length(); i++) {
             char ch = moves.charAt(i);
-            switch (ch){
+            switch (ch) {
                 case 'R':
                     x++;
                     break;
@@ -26,7 +23,7 @@ public class Robot {
                     break;
             }
         }
-        return x==0&&y==0;
+        return x == 0 && y == 0;
     }
 
 

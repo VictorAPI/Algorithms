@@ -2,9 +2,6 @@ package bootcamp;
 
 import org.junit.Test;
 
-/**
- * Created by borisgurtovyy on 11/2/17.
- */
 public class Polyndrom {
 
     // 1234321
@@ -14,7 +11,7 @@ public class Polyndrom {
         int xOld = x;
         int res = 0;
 
-        while(x > 0) {
+        while (x > 0) {
             int remainder = x % 10;
             res = res * 10 + remainder;
             x /= 10;
@@ -24,7 +21,7 @@ public class Polyndrom {
 
     @Test
     public void testPoly() {
-        int x  = 1234321;
+        int x = 2147447412;
         System.out.println(isPoly(x));
     }
 }

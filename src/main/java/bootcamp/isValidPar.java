@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import java.util.Stack;
 
-/**
- * Created by borisgurtovyy on 11/6/17.
- */
 public class isValidPar {
 
 
@@ -21,7 +18,7 @@ public class isValidPar {
 
         Stack<Character> stack = new Stack<Character>();
 
-        for(char ch : s.toCharArray()){
+        for (char ch : s.toCharArray()) {
             switch (ch) {
                 case '(':
                     stack.push(')');
@@ -33,11 +30,10 @@ public class isValidPar {
                     stack.push('}');
                     break;
                 default:
-                    if(stack.isEmpty() || stack.pop() != ch){
+                    if (stack.isEmpty() || stack.pop() != ch)
                         return false;
-                    }
             }
         }
-       return stack.isEmpty();
+        return stack.isEmpty();
     }
 }
