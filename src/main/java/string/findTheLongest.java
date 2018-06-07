@@ -4,7 +4,7 @@ package string;
 
 import org.junit.Test;
 
-public class FindTheLongest {
+public class findTheLongest {
 
 
     public String findTheLongest(String str) {

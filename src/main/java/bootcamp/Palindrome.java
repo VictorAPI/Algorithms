@@ -2,11 +2,11 @@ package bootcamp;
 
 import org.junit.Test;
 
-public class Polyndrom {
+public class Palindrome {
 
     // 1234321
 
-    public boolean isPoly(int x) {
+    public boolean isPali(int x) {
 
         int xOld = x;
         int res = 0;
@@ -20,8 +20,8 @@ public class Polyndrom {
     }
 
     @Test
-    public void testPoly() {
+    public void testPali() {
         int x = 2147447412;
-        System.out.println(isPoly(x));
+        System.out.println(isPali(x));
     }
 }

@@ -1,8 +1,7 @@
 package recursion;
 
-import java.util.*;
 
-class Main {
+public class isElementInFibonacci {
 
     public static void main(String[] args) {
 
