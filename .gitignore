@@ -1,0 +1,6 @@
+interview.preparation.iml
+.idea/
+.idea/libraries
+*.iml
+*.log
+target/*
